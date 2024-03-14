@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Thief : Villager
@@ -14,7 +15,8 @@ public class Thief : Villager
         Instantiate(daggerPrefab, spawnPointTwo.position, spawnPointTwo.rotation);
         base.Attack();
         //allows thief to dash while attacking to mouse clicked spot
-        destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
     }
     public override ChestType CanOpen()
     {
