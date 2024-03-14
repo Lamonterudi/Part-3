@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ChestType { Villager, Merchant, Archer } //add more later for task 4 since its outside its public everywhere
+public enum ChestType { Villager, Merchant, Archer, Thief } //add more later for task 4 since its outside its public everywhere
 public class Chest : MonoBehaviour
 {
     public Animator animator;
