@@ -7,10 +7,15 @@ public class Thief : Villager
     public GameObject knifePrefab;
     public Transform spawnPoint1;
     public Transform spawnPoint2;
-   
+    Coroutine dashing;
     protected override void Attack()
     {
-        StartCoroutine(Dash());
+        if(dashing != null)
+        {
+            StopCoroutine(dashing);
+ 
+        }
+        dashing = StartCoroutine(Dash());
       
     }
     IEnumerator Dash()
