@@ -1,12 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CharacterControl : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI currentSelection;
     public static CharacterControl Instance;
+    public TMP_Dropdown dropdown;
+    float interpolation;
+    public List<Villager> villagerList; 
     public static Villager SelectedVillager { get; private set; }
     public static void SetSelectedVillager(Villager villager)
     {
@@ -22,12 +27,11 @@ public class CharacterControl : MonoBehaviour
     {
         Instance = this; 
     }
+   
+    
+    public void DropdownSelectionHasChanged(int selection) //can be used instead aswell 
+    {
+        SetSelectedVillager(villagerList[selection]); 
+    }
 
-  //  private void Update()
-   // {
- //       if(SelectedVillager != null)
- //       {
-   //         currentSelection.text = SelectedVillager.GetType().ToString();
-  //      }
-  //  }
 }
