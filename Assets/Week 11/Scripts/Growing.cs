@@ -31,7 +31,7 @@ StartCoroutine(GrowingShapes());
         StartCoroutine(Square());
         yield return new WaitForSeconds(1);
         coroutine = StartCoroutine(Triangle());
-        Circle();
+        StartCoroutine(Circle());
         yield return coroutine;
         running -= 1;
     }
@@ -64,16 +64,19 @@ StartCoroutine(GrowingShapes());
 
         running -= 1;
     }
-    void Circle()
+    IEnumerator Circle()
     {
 
         float size = 0;
+        running += 1;   
         while (size < 5)
         {
             size += Time.deltaTime;
             Vector3 scale = new Vector3(size, size, size);
             circle.transform.localScale = scale;
             circleTMP.text = "Cirlce: " + scale;
+            yield return null;
+
         }
         while (size > 0)
         {
@@ -81,6 +84,9 @@ StartCoroutine(GrowingShapes());
             Vector3 scale = new Vector3(size, size, size);
             circle.transform.localScale = scale;
             circleTMP.text = "Cirlce: " + scale;
+            yield return null;
         }
+        running -= 1;
+    
     }
 }
