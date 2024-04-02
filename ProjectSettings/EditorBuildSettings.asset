@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assignment/A3 Scene/Scene/A3-Game.unity
     guid: e512fcae8e10cda4eb4931d05a23813c
+  - enabled: 1
+    path: Assets/Assignment/A3 Scene/Scene/Gameover.unity
+    guid: 122c189d50dcf834f8884cd8ebc80b9c
   m_configObjects: {}
