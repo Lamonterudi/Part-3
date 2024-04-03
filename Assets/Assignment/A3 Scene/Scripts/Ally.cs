@@ -13,23 +13,18 @@ public class Ally : Player
     {
         yoshTalk = FindAnyObjectByType<TextMeshProUGUI>();
     }
-    private void FixedUpdate()
+    private void Update()
     {
-        base.movement();
+        base.FixedUpdate();
+
+        yoshiSpeech();
     }
 
     public static void yoshiSpeech()
     {
-
-        yoshTalk.text = "Yoshi: If you press \"y\" then we can get out of this ditch girl... ";
-
-    }
-    protected override void OnCollisionEnter2D(Collision2D collision)
-    {
-      
-            yoshiSpeech();
-     
-
+        //made yoshi a little sassy LOL 
+        yoshTalk.text = "Yoshi: If you press \"y\" then we can get out of this ditch Chile... ";
 
     }
+   
 }

@@ -18,7 +18,7 @@ public class Mice : CharBehave
 
         protected override void OnCollisionEnter2D(Collision2D collision)
         {
-            // Start the coroutine when a collision is detected
+            //start the coroutine when a collision is detected
             StartCoroutine(MiceCaught());
         }
 
@@ -29,7 +29,7 @@ public class Mice : CharBehave
             // Wait for 2 secs
             yield return new WaitForSeconds(2);
             // Call the base class method to destroy the GameObject
-            base.CaughtMouse();
+            base.destroyGameobject();
         }
 
   IEnumerator Jump()
@@ -49,7 +49,7 @@ public class Mice : CharBehave
                 yield return null; // Wait for the next frame 
             }
             transform.position = endPosition;
-            // Wait for 1 seconds at the top of the jump.
+            // Wait for 0.4 seconds at the top of the jump
             yield return new WaitForSeconds(0.4f);
             // Move down
             timer = 0.0f;

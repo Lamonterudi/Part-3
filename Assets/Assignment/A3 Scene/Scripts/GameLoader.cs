@@ -14,4 +14,12 @@ public class GameLoader : MonoBehaviour
 
 
     }
+    public void MainMenu()
+    {
+        //Menu screen after playerclicks button 
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(0); // % modular leaves remainder 
+
+    }
+   
 }
